@@ -39,7 +39,7 @@
             </li>
           </ul>
         </nav>
-        <h3 class="text-muted">Capital Link</h3>
+        <h3 class="text-muted">MY PETTY CASH</h3>
       </div>
 
       <div class="jumbotron">

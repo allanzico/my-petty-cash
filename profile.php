@@ -43,41 +43,6 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
       <div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
-                <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <i class="mdi mdi-cube text-danger icon-lg"></i>
-                    </div>
-
-                      <p class="mb-0 text-right">My total savings</p>
-                      <div class="fluid-container">
-                        <h4 class="font-weight-medium text-right mb-0">
-
-                        <?php
-                            $sql = "SELECT FORMAT (SUM(amount),0) AS total_savings FROM transact WHERE transact.userId = $id;";
-                            $result = mysqli_query($conn,$sql);
-                            $resultCheck = mysqli_num_rows($result);
-                            if ($resultCheck>0) {
-                              while ($row = mysqli_fetch_assoc($result)) {
-                              $total_savings = $row['total_savings'];
-                                echo "UGX " .$total_savings;
-                              }
-                            }
-
-                            ?>
-
-                        </h4>
-                      </div>
-                    </div>
-
-                  <p class="text-muted mt-3 mb-0">
-                    <!-- <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth -->
-                  </p>
-                </div>
-              </div>
-            </div>
             <div class="col-md-9 col-sm-6 grid-margin">
               <div class="card">
                 <div class="card-body">
@@ -86,8 +51,6 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                   $sql = "SELECT * FROM users WHERE userId =$id;";
                   $result = mysqli_query($conn,$sql);
                   $resultCheck = mysqli_num_rows($result);
-
-
 
                   if ($resultCheck>0) {
                     while ($row = mysqli_fetch_assoc($result)) {
@@ -119,62 +82,6 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">My savings list</h4>
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                        <th>Date</th>
-                        <th>Amount</th>
-                        <th>Payment type</th>
-                        <th>Description</th>
-                        <th>Paid For</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <?php
-                 $sql = "SELECT * FROM transact WHERE userId = $id;";
-                 $result = mysqli_query($conn,$sql);
-                 $resultCheck = mysqli_num_rows($result); ?>
-
-                 <?php
-
-                 if ($resultCheck>0) {
-                   while ($row = mysqli_fetch_assoc($result)) {
-
-                     $amount = number_format($row['amount']);
-                     $date = $row['date'];
-                     $type = $row['type'];
-                     $description = $row['notes'];
-                     $paidFor =$row['paidFor'];
-                     ?>
-                     <tr>
-                     <td><?php echo $date ?></td>
-                     <td>UGX <?php echo $amount ?></td>
-                     <td><?php echo $type ?></td>
-                     <td><?php echo $description ?></td>
-                     <td><?php echo $paidFor ?></td>
-
-
-                     </tr>
-
-                     <?php   }
-                } else{ ?>
-                  <span class="text-danger mr-1 mb-0"><?php echo " No results "?></span>
-
-               <?php } ?>
-
-                      </tbody>
-                    </table>
                   </div>
                 </div>
               </div>
