@@ -99,19 +99,25 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                       <i class="mdi mdi-cube text-danger icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="mb-0 text-right">Total Revenue</p>
+                      <p class="mb-0 text-right">Current Balance</p>
                       <div class="fluid-container">
                         <h4 class="font-weight-medium text-right mb-0">
 
                         <?php
 
-                            $sql = "SELECT FORMAT (SUM(amount),0) AS total_savings FROM transact;";
-                            $result = mysqli_query($conn,$sql);
+                            $sqlBalance = "SELECT date, type,debit,credit,notes,@balance := @balance + p.credit - p.debit AS balance
+                            FROM
+                              (SELECT @balance := 0) AS initial
+                              CROSS JOIN
+                                pettycash AS p
+                            ORDER BY
+                            date;";
+                            $result = mysqli_query($conn,$sqlBalance);
                             $resultCheck = mysqli_num_rows($result);
                             if ($resultCheck>0) {
                               while ($row = mysqli_fetch_assoc($result)) {
-                              $total_savings = $row['total_savings'];
-                                echo "UGX " .$total_savings;
+                              $current_balance = $row['balance'];
+                                echo "€ " .$total_savings;
                               }
                             }
 
@@ -121,9 +127,6 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                       </div>
                     </div>
                   </div>
-                  <p class="text-muted mt-3 mb-0">
-                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i> 65% lower growth
-                  </p>
                 </div>
               </div>
             </div>
@@ -213,9 +216,9 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                         <tr>
                         <th>Date</th>
                         <th>Type</th>
-                        <th>Debit (UGX)</th>
-                        <th>Credit (UGX)</th>
-                        <th>Balance (UGX)</th>
+                        <th>Debit (€)</th>
+                        <th>Credit (€)</th>
+                        <th>Balance (€)</th>
                         <th>Description</th>
                         </tr>
                       </thead>
