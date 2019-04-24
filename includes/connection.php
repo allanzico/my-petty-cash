@@ -6,7 +6,7 @@ if(!defined('included')){
         exit();
      }
 //Create connection to mysql server
-$conn = mysqli_connect("b8rg15mwxwynuk9q.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "mph8lqg1ds27cdod", "cz215wn85izz9kxh")
+$conn = mysqli_connect("sabaik6fx8he7pua.chr7pe7iynqr.eu-west-1.rds.amazonaws.com", "tuam4r8le90dw9ba", "txrh8wg6qfoglgyq")
         OR DIE("<p>Unable to connect to the database server.</p>");
 
 // $conn = mysqli_connect("localhost", "root", "")
@@ -14,7 +14,7 @@ $conn = mysqli_connect("b8rg15mwxwynuk9q.chr7pe7iynqr.eu-west-1.rds.amazonaws.co
 
 //Creating database if doesn't already exist and selecting
 //$DBName = "savings_club";
-$DBName = "zywixeao4qc32xir";
+$DBName = "ufcaplv09w21gq60";
 if (!mysqli_select_db($conn, $DBName)) {
     $SQLstring = "CREATE DATABASE $DBName";
     mysqli_query($conn, $SQLstring)
