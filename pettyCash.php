@@ -153,6 +153,16 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                           </div>
                         </div>
                       </div>
+                      <div class="col-md-6">
+                        <div class="form-group row">
+                          <label class="col-sm-3 col-form-label">Notes</label>
+                          <div class="col-sm-6">
+                          <textarea class="form-control" rows="3" name="notes"></textarea>
+
+                          </div>
+
+                        </div>
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-success" name="depositPettyCash">Deposit petty cash</button>
                   </form>

@@ -6,6 +6,7 @@ if(isset($_POST['depositPettyCash'])){
     $date = $_POST['pettyCashDate'];
     $credit = $_POST['credit'];
     $type= "Deposit";
+    $notes = stripslashes($_POST['notes']);
 
     //Check if anything is empty
     if(empty($date)|| empty($credit)){
@@ -22,7 +23,7 @@ if(isset($_POST['depositPettyCash'])){
 
     else{
 
-                $sql = "INSERT INTO pettyCash (date, credit,type) VALUES (?,?,?)";
+                $sql = "INSERT INTO pettyCash (date, credit,type,notes) VALUES (?,?,?,?)";
                 $statement = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($statement, $sql)){
             header("Location: ../pettyCash.php?error=sqlerror");
@@ -32,7 +33,7 @@ if(isset($_POST['depositPettyCash'])){
         }else {
 
             $removeSlashes = stripslashes($notes);
-            mysqli_stmt_bind_param($statement, 'sis',$date, $credit,$type);
+            mysqli_stmt_bind_param($statement, 'siss',$date, $credit,$type,$notes);
             mysqli_stmt_execute($statement);
             // echo mysqli_info($conn);
 
