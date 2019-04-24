@@ -117,7 +117,7 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                             if ($resultCheck>0) {
                               while ($row = mysqli_fetch_assoc($result)) {
                               $current_balance = $row['balance'];
-                                echo "€ " .$total_savings;
+                                echo "€ " .$current_balance ;
                               }
                             }
 
