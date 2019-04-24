@@ -39,33 +39,14 @@ $profileImage = $row['profileImage'];
                 </div>
               </div>
               <?php if($admin == 'Y') { ?>
-              <a href="add-savings.php" class="btn btn-success btn-block">New Deposit<i class="mdi mdi-plus"></i>
-              </a>
               </button>
             </div>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" href="admin.php">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Dashboard</span>
-            </a>
-          </li>
-          <li class="nav-item">
-        <a class="nav-link" href="report.php">
-        <i class="menu-icon mdi mdi-finance"></i>
-        <span class="menu-title">Financial report</span>
-        </a>
-        </li>
+ 
         <li class="nav-item">
         <a class="nav-link" href="pettyCash.php">
         <i class="menu-icon mdi mdi-cash-multiple"></i>
         <span class="menu-title">Petty cash</span>
-        </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="members.php">
-        <i class="menu-icon mdi mdi-account-multiple-outline"></i>
-        <span class="menu-title">Members</span>
         </a>
         </li>
           <li class="nav-item">

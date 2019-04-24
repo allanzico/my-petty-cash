@@ -36,7 +36,7 @@ if(isset($_POST['login_user'])){
                     header("Location: ../user.php?login=success");
                     exit();
                    }else {
-                    header("Location: ../admin.php?login=success");
+                    header("Location: ../pettyCash.php?login=success");
                    }
 
                }else{

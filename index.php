@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Capital Link</title>
+    <title>My PettyCash</title>
 
 
     <!-- Bootstrap core CSS -->
@@ -43,8 +43,8 @@
       </div>
 
       <div class="jumbotron">
-        <h1 class="display-3">CAPITAL LINK</h1>
-        <p class="lead">Capital link savings club</p>
+        <h1 class="display-3">MY PETTY CASH</h1>
+        <p class="lead">Personal Budget</p>
         <p><a class="btn btn-lg btn-success" href="register.php" role="button">Sign up today</a></p>
       </div>
 
