@@ -105,7 +105,7 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
 
                         <?php
 
-                            $sqlBalance = "SELECT date, type,debit,credit,notes,@balance := @balance + p.credit - p.debit AS balance
+                            $sqlBalance = "SELECT @balance := @balance + p.credit - p.debit AS balance
                             FROM
                               (SELECT @balance := 0) AS initial
                               CROSS JOIN
