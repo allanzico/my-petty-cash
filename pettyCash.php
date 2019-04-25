@@ -224,9 +224,9 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                      <td><?php echo $type ?></td>
                      <td><?php echo $debit ?></td>
                      <td><?php echo $credit ?></td>
-                     <td><?php echo $balance ?></td>
                      <td><?php echo $description ?></td>
-
+                     <td><?php echo $balance ?></td>
+                    
                      </tr>
 
                      <?php   }
