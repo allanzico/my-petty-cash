@@ -91,7 +91,7 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
 
         ?>
         <div class="row">
-            <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 grid-margin stretch-card">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 grid-margin stretch-card">
               <div class="card card-statistics">
                 <div class="card-body">
                   <div class="clearfix">
