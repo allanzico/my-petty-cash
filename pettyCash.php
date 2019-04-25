@@ -104,6 +104,8 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                         <h4 class="font-weight-medium text-right mb-0">
 
                         <?php
+                            $sqlTotalBalance = "SELECT (SUM(p.debit)*-1) + SUM(p.credit) AS TotalBalance
+                            FROM Trasaction";
 
                             $sqlBalance = "SELECT @balance := @balance + p.credit - p.debit AS balance
                             FROM
@@ -112,12 +114,12 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                                 pettycash AS p
                             ORDER BY
                             date;";
-                            $result = mysqli_query($conn,$sqlBalance);
+                            $result = mysqli_query($conn,$sqlTotalBalance);
                             $resultCheck = mysqli_num_rows($result);
                             if ($resultCheck>0) {
                               while ($row = mysqli_fetch_assoc($result)) {
-                              $current_balance = $row['balance'];
-                                echo "€ " .$current_balance ;
+                                $sqlTotalBalance = $row['balance'];
+                                echo "€ " .$sqlTotalBalance ;
                               }
                             }
 
