@@ -91,8 +91,8 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
 
         ?>
         <div class="row">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 grid-margin stretch-card">
-              <div class="card card-statistics">
+            <div class="col-12 grid-margin">
+              <div class="card card">
                 <div class="card-body">
                   <div class="clearfix">
                   <h4 class="card-title">Record Petty Cash</h4>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                     <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Date</label>
+                          <label class="col-sm-3 col-form-label">Date</label>
                           <div class="col-sm-9">
                           <input type="date" name="pettyCashDate" class="form-control" >
                           </div>
@@ -108,7 +108,7 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                       </div>
                       <div class="col-md-6">
                         <div class="form-group row">
-                          <label class="col-sm-4 col-form-label">Amount</label>
+                          <label class="col-sm-3 col-form-label">Amount</label>
                           <div class="col-sm-9">
                           <input type="text" name="credit" class="form-control" >
                           </div>
