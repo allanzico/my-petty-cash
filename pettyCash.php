@@ -91,47 +91,6 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
 
         ?>
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 grid-margin stretch-card">
-              <div class="card card-statistics">
-                <div class="card-body">
-                  <div class="clearfix">
-                    <div class="float-left">
-                      <i class="mdi mdi-cube text-danger icon-lg"></i>
-                    </div>
-                    <div class="float-right">
-                      <p class="mb-0 text-right">Current Balance</p>
-                      <div class="fluid-container">
-                        <h4 class="font-weight-medium text-right mb-0">
-
-                        <?php
-                            $sqlTotalBalance = "SELECT (SUM(p.debit)*-1) + SUM(p.credit) AS TotalBalance
-                            FROM Trasaction";
-
-                            $sqlBalance = "SELECT @balance := @balance + p.credit - p.debit AS balance
-                            FROM
-                              (SELECT @balance := 0) AS initial
-                              CROSS JOIN
-                                pettycash AS p
-                            ORDER BY
-                            date;";
-                            $result = mysqli_query($conn,$sqlTotalBalance);
-                            $resultCheck = mysqli_num_rows($result);
-                            if ($resultCheck>0) {
-                              while ($row = mysqli_fetch_assoc($result)) {
-                                $sqlTotalBalance = $row['balance'];
-                                echo "€ " .$sqlTotalBalance ;
-                              }
-                            }
-
-                            ?>
-
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 grid-margin stretch-card">
               <div class="card card-statistics">
                 <div class="card-body">
