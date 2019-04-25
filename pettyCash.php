@@ -189,8 +189,8 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                         <th>Type</th>
                         <th>Debit (€)</th>
                         <th>Credit (€)</th>
-                        <th>Balance (€)</th>
                         <th>Description</th>
+                        <th>Balance (€)</th>
                         </tr>
                       </thead>
                       <tbody>
