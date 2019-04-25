@@ -186,10 +186,10 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                       <thead>
                         <tr>
                         <th>Date</th>
+                        <th>Description</th>
                         <th>Type</th>
                         <th>Debit (€)</th>
                         <th>Credit (€)</th>
-                        <th>Description</th>
                         <th>Balance (€)</th>
                         </tr>
                       </thead>
@@ -221,10 +221,10 @@ if (!isset($_SESSION['fName']) || !isset($_SESSION['userID'])) {
                      ?>
                      <tr>
                      <td><?php echo $date ?></td>
+                     <td><?php echo $description ?></td>
                      <td><?php echo $type ?></td>
                      <td><?php echo $debit ?></td>
-                     <td><?php echo $credit ?></td>
-                     <td><?php echo $description ?></td>
+                     <td><?php echo $credit ?></td>                
                      <td><?php echo $balance ?></td>
                     
                      </tr>
